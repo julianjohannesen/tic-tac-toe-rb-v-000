@@ -1,18 +1,21 @@
 # #play loops over #turn, repeating until the game is won
-def play(board)
+def play
   board = [" ", " ", " "," ", " ", " "," ", " ", " "]
+  # Play until someone wins or there is a draw
   until over?(board) do
     turn(board)
   end
+  # Congratulate the winner
   if won?(board)
     puts "Congratulations, player #{winner(board)}. You won the game."
   else
     puts "The game ended in a draw."
   end
+  
   puts "Would you like to play again? (Y or N)"
   ans = gets.strip
-  if ans == "Y"
-    play(board)
+  if ans.downcase == "y" || ans.downcase == "yes"
+    play
   else
     puts "Goodbye!"
   end
