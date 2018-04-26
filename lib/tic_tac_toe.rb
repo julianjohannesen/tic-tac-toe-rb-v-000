@@ -4,7 +4,11 @@ def play(board)
   until over?(board) do
     turn(board)
   end
-  puts "Congratulations, player #{winner(board)}. You won the game."
+  if won?(board)
+    puts "Congratulations, player #{winner(board)}. You won the game."
+  else
+    puts "The game ended in a draw."
+  end
   puts "Would you like to play again? (Y or N)"
   ans = gets.strip
   if ans == "Y"
