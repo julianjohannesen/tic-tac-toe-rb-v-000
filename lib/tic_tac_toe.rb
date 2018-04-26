@@ -8,7 +8,8 @@ end
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
 # Called by #play
 def turn(board)
-  puts "Please enter 1-9:"
+  c_p = current_player(board)
+  puts "Player #{c_p}, please enter a number 1-9:"
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
