@@ -6,6 +6,7 @@ def play(board)
 end
 
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
+# Called by #play
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -18,33 +19,38 @@ def turn(board)
   end
 end
 
+# #input_to_index converts the player's choice of position to the corresponding index in the board array. 
+# Called by #turn
+def input_to_index(input)
+  input.to_i - 1
+end
+
+# #valid_move? checks to see if current player's move choice is both available and a position on the board (has an index between 0-8)
+# Called by #turn
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
+end
+
+# #position_taken? checks to see if a position on the board is already occupied by an "X" or "O".
+# Called by #valid_move
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+# #move update the board array with the current player's valid move choice
+# Called by #turn
+def move(board, index, current_player = "X")
+  board[index] = current_player
+end
+
 # #display_board displays an ascii Tic Tac Toe board.
+# Called by #turn
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
-# #input_to_index converts the player's choice of position to the corresponding index in the board array.
-def input_to_index(input)
-  input.to_i - 1
-end
-
-# #move update the board array with the current player's valid move choice
-def move(board, index, current_player = "X")
-  board[index] = current_player
-end
-
-# #position_taken? checks to see if a position on the board is already occupied by an "X" or "O"
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
-end
-
-# #valid_move? checks to see if current player's move choice is both available and a position on the board (has an index between 0-8)
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
 end
 
 # #turn_count keeps track of the number of turns that have been taken
