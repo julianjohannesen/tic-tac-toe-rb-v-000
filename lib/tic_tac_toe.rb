@@ -53,7 +53,18 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+# #current_player checks which turn it is to determine if it's X or O's turn
+# Called by #turn
+def current_player(board)
+  if turn_count(board) % 2 == 0
+    return "X"
+  else
+    return "O"
+  end
+end
+
 # #turn_count keeps track of the number of turns that have been taken
+# Called by #current_player
 def turn_count(board)
   counter = 0
   board.each do |index|
@@ -62,15 +73,6 @@ def turn_count(board)
     end
    end
    return counter
-end
-
-# #current_player checks which turn it is to determine if it's X or O's turn
-def current_player(board)
-  if turn_count(board) % 2 == 0
-    return "X"
-  else
-    return "O"
-  end
 end
 
 # WIN_COMBINATIONS holds 8 possible winning combinations of 3 board positions
