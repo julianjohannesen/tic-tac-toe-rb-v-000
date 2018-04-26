@@ -1,5 +1,6 @@
 # #play loops over #turn, repeating until the game is won
 def play(board)
+  board = [" ", " ", " "," ", " ", " "," ", " ", " "]
   until over?(board) do
     turn(board)
   end
