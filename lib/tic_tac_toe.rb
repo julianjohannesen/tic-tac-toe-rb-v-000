@@ -12,7 +12,7 @@ def play(board)
     puts "Congratulations #{winner(board)}!"
     #puts "Congratulations, player #{winner(board)}. You won the game."
   else
-    puts "The game ended in a draw."
+    puts "Cat's Game!"
   end
 =begin
   puts "Would you like to play again? (Y or N)"
