@@ -19,7 +19,7 @@ def turn(board)
   end
 end
 
-# #input_to_index converts the player's choice of position to the corresponding index in the board array. 
+# #input_to_index converts the player's choice of position to the corresponding index in the board array.
 # Called by #turn
 def input_to_index(input)
   input.to_i - 1
