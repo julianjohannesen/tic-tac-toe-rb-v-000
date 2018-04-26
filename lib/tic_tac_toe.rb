@@ -4,6 +4,12 @@ def play(board)
     turn(board)
   end
   puts "Congratulations, player #{winner(board)}. You won the game."
+  puts "Would you like to play again? (Y or N)"
+  ans = gets.strip
+  if ans = "Y"
+    play(board)
+  else
+    puts "Goodbye!"
 end
 
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
