@@ -22,7 +22,7 @@ def play
     puts "Goodbye!"
   end
 =end
-  
+
 end
 
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
