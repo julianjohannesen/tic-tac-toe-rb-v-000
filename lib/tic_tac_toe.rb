@@ -1,6 +1,6 @@
 # #play loops over #turn, repeating until the game is won
 def play(board)
-  
+
   # Play until someone wins or there is a draw
   until over?(board) do
     turn(board)
