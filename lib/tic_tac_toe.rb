@@ -7,7 +7,7 @@ def play(board)
   puts "Congratulations, player #{winner(board)}. You won the game."
   puts "Would you like to play again? (Y or N)"
   ans = gets.strip
-  if ans = "Y"
+  if ans == "Y"
     play(board)
   else
     puts "Goodbye!"
