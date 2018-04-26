@@ -11,7 +11,7 @@ def play
   else
     puts "The game ended in a draw."
   end
-  
+
   puts "Would you like to play again? (Y or N)"
   ans = gets.strip
   if ans.downcase == "y" || ans.downcase == "yes"
