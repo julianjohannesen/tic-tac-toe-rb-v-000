@@ -6,6 +6,8 @@ def play
     turn(board)
   end
   # Congratulate the winner
+
+=begin
   if won?(board)
     puts "Congratulations, player #{winner(board)}. You won the game."
   else
@@ -19,6 +21,8 @@ def play
   else
     puts "Goodbye!"
   end
+=end
+  
 end
 
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
