@@ -57,7 +57,7 @@ end
 
 # #move update the board array with the current player's valid move choice
 # Called by #turn
-def move(board, index, current_player = "X")
+def move(board, index, current_player)
   board[index] = current_player
 end
 
