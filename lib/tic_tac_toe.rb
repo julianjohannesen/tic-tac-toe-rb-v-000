@@ -3,7 +3,7 @@ def play(board)
   until over?(board) do
     turn(board)
   end
-  puts "Congratulations, player #{winner(board)}"
+  puts "Congratulations, player #{winner(board)}. You won the game."
 end
 
 # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
@@ -16,7 +16,7 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index, c_p)
     display_board(board)
-  
+
   else
     turn(board)
   end
