@@ -7,13 +7,13 @@ def play(board)
   end
   # Congratulate the winner
 
-=begin
+
   if won?(board)
     puts "Congratulations, player #{winner(board)}. You won the game."
   else
     puts "The game ended in a draw."
   end
-
+=begin
   puts "Would you like to play again? (Y or N)"
   ans = gets.strip
   if ans.downcase == "y" || ans.downcase == "yes"
